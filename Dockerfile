@@ -17,7 +17,7 @@ RUN apt-get update \
  && rm -r /var/lib/apt/lists/*
 
 RUN apt-get update \
- && apt install -y bastet
+ && apt install -y bastet \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/*
 
