@@ -1,12 +1,10 @@
-# ƸӜƷ butterfly 3.0
+# butterfly 3.0
 
-![](http://paradoxxxzero.github.io/assets/butterfly_2.0_1.gif)
-
+Copie du dépôt https://github.com/paradoxxxzero/butterfly
 
 ## Description
 
-Butterfly is a xterm compatible terminal that runs in your browser.
-
+Butterfly est une console (xterm) qui s'exécute dans un fureteur. 
 
 ## Features
 
@@ -118,24 +116,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Docker
 There is a docker repository created for this project that is set to automatically rebuild when there is a push
-into this repository: https://registry.hub.docker.com/u/garland/butterfly/
+into this repository: https://hub.docker.com/repository/docker/demers/butterfly
 
 ### Example usage
 
 Starting with login and password
 
 ``` bash
-docker run --env PASSWORD=password -d garland/butterfly --login
+docker run --env PASSWORD=password -d demers/butterfly --login
 ```
 
 Starting with no password
 
 ``` bash
-docker run -d -p 57575:57575 garland/butterfly
+docker run -d -p 57575:57575 demers/butterfly
 ```
 
 Starting with a different port
 
 ``` bash
-docker run -d -p 12345:12345 garland/butterfly --port=12345
+docker run -d -p 12345:12345 demers/butterfly --port=12345
 ```
