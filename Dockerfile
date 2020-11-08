@@ -44,6 +44,9 @@ RUN python setup.py build \
 ADD docker/run.sh /opt/run.sh
 ADD docker/run_game.sh /opt/run_game.sh
 
+# Fichier par défaut de démarrage de la console
+ADD docker/atstart.sh /tmp/atstart.sh
+
 EXPOSE 57575
 EXPOSE 8080
 EXPOSE 8081
@@ -55,11 +58,7 @@ EXPOSE 8086
 EXPOSE 8087
 EXPOSE 8088
 
-#CMD ["butterfly.server.py", "--unsecure", "--host=0.0.0.0", "--port=$PORT", "--shell=/opt/run_game.sh $JEU"]
-#CMD /opt/run_game.sh $JEU; butterfly.server.py --unsecure --host=0.0.0.0 --port=$PORT --shell=/tmp/run.sh
 CMD /opt/run_game.sh $JEU; butterfly.server.py --unsecure --host=0.0.0.0 --port=$PORT --shell=/tmp/atstart.sh
-#CMD butterfly.server.py --unsecure --host=0.0.0.0 --port=$PORT --cmd=/opt/run_game.sh $JEU
-#CMD ["butterfly.server.py", "--unsecure", "--host=0.0.0.0"]
 
 # Exemple d'exécution: docker run --env PASSWORD=123 --env JEU=bastet --env PORT=57575 -d -p 57575:57575 butterfly
 
